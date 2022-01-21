@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import Container from "@mui/material/Container";
+import { routes } from "./routes/routes";
+import { Routes, Route } from "react-router-dom";
+import { styled } from "@mui/system";
 
-function App() {
+const AppLayout = styled("div")({
+  backgroundColor: "#cfe8fc",
+});
+
+const StyledContainer = styled(Container)({
+  backgroundColor: "#fff",
+  minHeight: "100vh",
+  padding: 5,
+});
+
+export default function SimpleContainer() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppLayout>
+      <StyledContainer maxWidth="lg">
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            {routes.map((item: any) => (
+              <Route
+                key={item.name}
+                path={item.pathname}
+                element={<item.component />}
+              />
+            ))}
+          </Routes>
+        </React.Suspense>
+      </StyledContainer>
+    </AppLayout>
   );
 }
-
-export default App;
