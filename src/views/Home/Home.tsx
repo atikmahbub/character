@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from "react";
-import { Typography, Box, Pagination } from "@mui/material";
+import { Box, Pagination } from "@mui/material";
 import { API } from "../../config/Api";
 import {
   characterReducer,
@@ -8,6 +8,9 @@ import {
   GET_CHARACTERS_SUCCESS,
   GET_CHARACTERS_ERROR,
 } from "../../reducers/characterReducer";
+import DataContainer from "./DataContainer";
+import AddTitle from "../../components/AddTitle";
+const PAGE_SIZE = 20;
 
 const Home = () => {
   const [state, dispatch] = useReducer(characterReducer, initialState);
@@ -29,12 +32,11 @@ const Home = () => {
 
   return (
     <React.Fragment>
-      <Typography variant="h3" textAlign="center">
-        Ticket's List
-      </Typography>
+      <AddTitle title="Character's List" />
+      <DataContainer data={state.data?.results} />
       <Box display="flex" justifyContent="center">
         <Pagination
-          count={10}
+          count={Math.ceil(state.data?.info.count / PAGE_SIZE)}
           variant="outlined"
           shape="rounded"
           page={page}

@@ -14,7 +14,7 @@ const StyledContainer = styled(Container)({
   padding: 5,
 });
 
-export default function SimpleContainer() {
+export default function App() {
   return (
     <AppLayout>
       <StyledContainer maxWidth="lg">
