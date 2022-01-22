@@ -3,6 +3,7 @@ import { useEffect, useReducer, Fragment } from "react";
 import { useParams } from "react-router-dom";
 import AddTitle from "../../components/AddTitle";
 import { API } from "../../config/Api";
+import Loader from "../../containers/Loader";
 import {
   characterReducer,
   initialState,
@@ -38,7 +39,9 @@ const TicketDetails = () => {
     }
   }, [id]);
 
-  console.log(state.data);
+  if (state.loading) {
+    return <Loader />;
+  }
 
   return (
     <Fragment>

@@ -10,6 +10,7 @@ import {
 } from "../../reducers/characterReducer";
 import DataContainer from "./DataContainer";
 import AddTitle from "../../components/AddTitle";
+import Loader from "../../containers/Loader";
 const PAGE_SIZE = 20;
 
 const Home = () => {
@@ -29,6 +30,10 @@ const Home = () => {
         dispatch({ type: GET_CHARACTERS_ERROR, payload: error });
       });
   }, [page]);
+
+  if (state.loading) {
+    return <Loader />;
+  }
 
   return (
     <React.Fragment>
