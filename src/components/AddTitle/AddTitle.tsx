@@ -17,7 +17,7 @@ const AddTitle = ({ title, backButton }: TitleProps) => {
       </Typography>
       {backButton && (
         <Box
-          color="gray"
+          color="#40bd24"
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -26,7 +26,9 @@ const AddTitle = ({ title, backButton }: TitleProps) => {
           onClick={() => navigate(-1)}
         >
           <ArrowBackIcon />
-          <Typography textAlign="center">Go Back</Typography>
+          <Typography fontWeight={700} variant="caption" textAlign="center">
+            Go Back
+          </Typography>
         </Box>
       )}
     </Fragment>
