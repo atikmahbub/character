@@ -3,9 +3,10 @@ import Container from "@mui/material/Container";
 import { routes } from "./routes/routes";
 import { Routes, Route } from "react-router-dom";
 import { styled } from "@mui/system";
+import Loader from "./containers/Loader";
 
 const AppLayout = styled("div")({
-  backgroundColor: "#cfe8fc",
+  backgroundColor: "#D0E8FC",
 });
 
 const StyledContainer = styled(Container)({
@@ -18,7 +19,7 @@ export default function App() {
   return (
     <AppLayout>
       <StyledContainer maxWidth="lg">
-        <React.Suspense fallback={<div>Loading...</div>}>
+        <React.Suspense fallback={<Loader />}>
           <Routes>
             {routes.map((item: any) => (
               <Route
