@@ -23,7 +23,7 @@ const AddTitle = ({ title, backButton }: TitleProps) => {
           justifyContent="center"
           gap={1}
           sx={{ cursor: "pointer" }}
-          onClick={() => navigate(-1)}
+          onClick={() => navigate("/")}
         >
           <ArrowBackIcon />
           <Typography fontWeight={700} variant="caption" textAlign="center">
