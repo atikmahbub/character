@@ -86,7 +86,7 @@ const DetailsContainer = ({ data }: Props) => {
               variant="subtitle2"
               key={i}
             >
-              {data?.name}
+              {i + 1}. {data?.name}
             </Typography>
           ))}
         </Stack>
