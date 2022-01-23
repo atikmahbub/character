@@ -12,7 +12,11 @@ type Props = {
 
 const DetailsContainer = ({ data }: Props) => {
   return (
-    <Stack spacing={1}>
+    <Stack
+      spacing={1}
+      p={1}
+      sx={{ border: "1px solid #ebedeb", width: "100%", borderRadius: 3 }}
+    >
       <Typography fontWeight={700} variant="h4">
         {data?.name}
       </Typography>
