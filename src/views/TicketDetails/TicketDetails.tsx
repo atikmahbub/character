@@ -1,43 +1,29 @@
+import React, { Fragment, useEffect } from "react";
 import { Box, styled } from "@mui/material";
-import { useEffect, useReducer, Fragment } from "react";
 import { useParams } from "react-router-dom";
 import AddTitle from "../../components/AddTitle";
-import { API } from "../../config/Api";
 import Loader from "../../containers/Loader";
-import {
-  characterReducer,
-  initialState,
-  GET_CHARACTERS_PENDING,
-  GET_CHARACTERS_SUCCESS,
-  GET_CHARACTERS_ERROR,
-} from "../../reducers/characterReducer";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Skeleton from "@mui/material/Skeleton";
 import DetailsContainer from "./DetailsContainer";
+import useApi from "../../hooks/useApi";
+import { useNavigate } from "react-router-dom";
 
 const StyledImage = styled("img")({
   borderRadius: 5,
 });
 
 const TicketDetails = () => {
-  const { id } = useParams();
-  const [state, dispatch] = useReducer(characterReducer, initialState);
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const matches = useMediaQuery("(max-width:768px)");
+  const { isLoading, data } = useApi(`${id}`);
 
   useEffect(() => {
-    dispatch({ type: GET_CHARACTERS_PENDING });
-    if (id) {
-      API.get(`${id}`)
-        .then((response) => {
-          dispatch({ type: GET_CHARACTERS_SUCCESS, payload: response.data });
-        })
-        .catch((error) => {
-          dispatch({ type: GET_CHARACTERS_ERROR, payload: error });
-        });
-    }
-  }, [id]);
+    if (id) if (!Number.isInteger(parseInt(id))) return navigate("*");
+  }, [id, navigate]);
 
-  if (state.loading) {
+  if (isLoading) {
     return <Loader />;
   }
 
@@ -51,8 +37,8 @@ const TicketDetails = () => {
         alignItems="flex-start"
         mt={10}
       >
-        {state.data ? (
-          <StyledImage src={state.data?.image} alt="pic" width={350} />
+        {data ? (
+          <StyledImage src={data?.image} alt="pic" width={350} />
         ) : (
           <Skeleton
             variant="rectangular"
@@ -61,7 +47,7 @@ const TicketDetails = () => {
             height={300}
           />
         )}
-        <DetailsContainer data={state.data && state.data} />
+        <DetailsContainer data={data} />
       </Box>
     </Fragment>
   );
