@@ -12,7 +12,7 @@ const AppLayout = styled("div")({
 const StyledContainer = styled(Container)({
   backgroundColor: "#fff",
   minHeight: "100vh",
-  padding: 5,
+  padding: 30,
 });
 
 export default function App() {
