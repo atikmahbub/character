@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render With BackButton 1`] = `
+<h3
+  className="MuiTypography-root MuiTypography-h3 css-47suzj-MuiTypography-root"
+>
+  Hello
+</h3>
+`;
+
+exports[`Render Without BackButton 1`] = `
+<h3
+  className="MuiTypography-root MuiTypography-h3 css-47suzj-MuiTypography-root"
+>
+  Hello
+</h3>
+`;

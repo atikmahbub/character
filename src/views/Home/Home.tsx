@@ -23,7 +23,7 @@ const Home = () => {
       <DataContainer data={data?.results} />
       <Box display="flex" justifyContent="center">
         <Pagination
-          count={Math.ceil(data?.info.count / PAGE_SIZE)}
+          count={data?.info.count ? Math.ceil(data.info.count / PAGE_SIZE) : 0}
           variant="outlined"
           shape="rounded"
           page={page}

@@ -26,7 +26,7 @@ const useApi = (api: string) => {
 
   return React.useMemo(
     () => ({
-      data: state.data && state.data,
+      data: state.data,
       isLoading: state.loading,
       error: state.error,
     }),

@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Without Crashing 1`] = `
+<div
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-lclo15-MuiPaper-root"
+>
+  <div
+    className="css-m69qwo-MuiStack-root"
+  >
+    <img
+      alt="pic"
+      src="Test Image"
+      style={
+        Object {
+          "borderRadius": 4,
+        }
+      }
+      width={180}
+    />
+    <div
+      className="css-s0cucq-MuiStack-root"
+    >
+      <h5
+        className="MuiTypography-root MuiTypography-h5 css-1p99d0j-MuiTypography-root"
+        onClick={[Function]}
+      >
+        Test
+      </h5>
+      <div
+        className="MuiBox-root css-1h2sv0j"
+      >
+        <span
+          className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+        >
+          Human
+        </span>
+        <span
+          className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+        >
+          Male
+        </span>
+      </div>
+      <span
+        className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+      >
+        created: 
+        Invalid date
+      </span>
+    </div>
+  </div>
+</div>
+`;
