@@ -36,12 +36,12 @@ Array [
       style={
         Object {
           "height": 300,
-          "width": 350,
+          "width": 450,
         }
       }
     />
     <div
-      className="css-1okj3ks-MuiStack-root"
+      className="css-4ns2p8-MuiStack-root"
     >
       <h4
         className="MuiTypography-root MuiTypography-h4 css-1313egv-MuiTypography-root"
@@ -49,49 +49,75 @@ Array [
       <div
         className="MuiBox-root css-uklcv"
       >
-        <span
-          className="MuiTypography-root MuiTypography-caption css-sfqsx-MuiTypography-root"
+        <h6
+          className="MuiTypography-root MuiTypography-subtitle2 css-zdy50j-MuiTypography-root"
         >
           Status:
-        </span>
-        <span
-          className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+        </h6>
+        <h6
+          className="MuiTypography-root MuiTypography-subtitle2 css-ati914-MuiTypography-root"
         />
       </div>
       <div
         className="MuiBox-root css-uklcv"
       >
-        <span
-          className="MuiTypography-root MuiTypography-caption css-sfqsx-MuiTypography-root"
+        <h6
+          className="MuiTypography-root MuiTypography-subtitle2 css-zdy50j-MuiTypography-root"
         >
           Species:
-        </span>
-        <span
-          className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+        </h6>
+        <h6
+          className="MuiTypography-root MuiTypography-subtitle2 css-ati914-MuiTypography-root"
         />
       </div>
       <div
         className="MuiBox-root css-uklcv"
       >
-        <span
-          className="MuiTypography-root MuiTypography-caption css-sfqsx-MuiTypography-root"
+        <h6
+          className="MuiTypography-root MuiTypography-subtitle2 css-zdy50j-MuiTypography-root"
         >
           Gender:
-        </span>
-        <span
-          className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+        </h6>
+        <h6
+          className="MuiTypography-root MuiTypography-subtitle2 css-ati914-MuiTypography-root"
         />
       </div>
       <div
         className="MuiBox-root css-uklcv"
       >
-        <span
-          className="MuiTypography-root MuiTypography-caption css-sfqsx-MuiTypography-root"
+        <h6
+          className="MuiTypography-root MuiTypography-subtitle2 css-zdy50j-MuiTypography-root"
         >
           Last Known Location:
-        </span>
-        <span
-          className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+        </h6>
+        <h6
+          className="MuiTypography-root MuiTypography-subtitle2 css-ati914-MuiTypography-root"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-uklcv"
+      >
+        <h6
+          className="MuiTypography-root MuiTypography-subtitle2 css-zdy50j-MuiTypography-root"
+        >
+          Type:
+        </h6>
+        <h6
+          className="MuiTypography-root MuiTypography-subtitle2 css-ati914-MuiTypography-root"
+        >
+          N/A
+        </h6>
+      </div>
+      <div
+        className="css-nen11g-MuiStack-root"
+      >
+        <h6
+          className="MuiTypography-root MuiTypography-subtitle2 css-zdy50j-MuiTypography-root"
+        >
+          Last Episode's:
+        </h6>
+        <div
+          className="css-102c6c7-MuiStack-root"
         />
       </div>
     </div>

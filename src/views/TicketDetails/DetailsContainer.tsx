@@ -1,4 +1,6 @@
 import { Box, Stack, styled, Typography } from "@mui/material";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const DoubleColumn = styled(Box)({
   display: "flex",
@@ -11,6 +13,26 @@ type Props = {
 };
 
 const DetailsContainer = ({ data }: Props) => {
+  const [episode, setEpisodes] = useState<any[]>([]);
+
+  const getEpisode = async (data: any) => {
+    let response = await axios.all(data);
+    setEpisodes(response);
+  };
+
+  useEffect(() => {
+    const _promiseArray: any[] = [];
+    if (data?.episode) {
+      data?.episode.forEach((element: string, i: number) => {
+        if (i < 5) {
+          let response = axios.get(element);
+          _promiseArray.push(response);
+        }
+      });
+      getEpisode(_promiseArray);
+    }
+  }, [data?.episode]);
+
   return (
     <Stack
       spacing={1}
@@ -57,30 +79,16 @@ const DetailsContainer = ({ data }: Props) => {
           Last Episode's:
         </Typography>
         <Stack pl={5} mt={0.5}>
-          {data?.episode
-            .slice(0)
-            .reverse()
-            // eslint-disable-next-line array-callback-return
-            .map((item: string, i: number) => {
-              if (i < 5) {
-                return (
-                  <a
-                    style={{ textDecoration: "none" }}
-                    href={item}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    <Typography
-                      color="indigo"
-                      fontWeight={600}
-                      variant="subtitle2"
-                    >
-                      {i + 1}: {item}
-                    </Typography>
-                  </a>
-                );
-              }
-            })}
+          {episode.map(({ data }: any, i: number) => (
+            <Typography
+              color="#333"
+              fontWeight={600}
+              variant="subtitle2"
+              key={i}
+            >
+              {data?.name}
+            </Typography>
+          ))}
         </Stack>
       </Stack>
     </Stack>
