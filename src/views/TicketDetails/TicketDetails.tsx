@@ -38,12 +38,16 @@ const TicketDetails = () => {
         mt={10}
       >
         {data ? (
-          <StyledImage src={data?.image} alt="pic" width={350} />
+          <StyledImage
+            src={data?.image}
+            alt="pic"
+            width={matches ? "100%" : 450}
+          />
         ) : (
           <Skeleton
             variant="rectangular"
             animation="wave"
-            width={350}
+            width={450}
             height={300}
           />
         )}
